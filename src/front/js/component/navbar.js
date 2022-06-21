@@ -1,19 +1,93 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const styles = {
+  textDecoration: "none",
+  color: "black",
+};
+
+const stylesb = {
+  textDecoration: "none",
+  color: "white",
+};
+
 export const Navbar = () => {
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
+  return (
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-light rounded"
+      aria-label="Tenth navbar example"
+    >
+      <div className="container-fluid">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample08"
+          aria-controls="navbarsExample08"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <span className="navbar-brand">
+          <Link to="/" style={styles}>
+            Logo/Inicio
+          </Link>
+        </span>
+        <div
+          className="collapse navbar-collapse justify-content-md-start"
+          id="navbarsExample08"
+        >
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <span className="nav-link" aria-current="page" href="#">
+                <Link to="/Buscador" style={styles}>
+                  Trayectoria
+                </Link>
+              </span>
+            </li>
+            <li className="nav-item dropdown">
+              <span
+                className="nav-link dropdown-toggle text-dark"
+                href="#"
+                id="dropdown08"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                canciones
+              </span>
+              <ul className="dropdown-menu" aria-labelledby="dropdown08">
+                <li>
+                  <span className="dropdown-item" href="#">
+                    <Link to="/RegistroAlumno" style={styles}>
+                      balada
+                    </Link>
+                  </span>
+                </li>
+                <li>
+                  <span className="dropdown-item" href="#">
+                    <Link to="/RegistroEmpresa" style={styles}>
+                      bachata
+                    </Link>
+                  </span>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div className=" text-end">
+          <button type="button" className="btn btn-primary me-2">
+            <Link to="/AccesoAlumno" style={stylesb}>
+              Iniciar Seccion
+            </Link>
+          </button>
+          <button type="button" className="btn btn-primary">
+            <Link to="/AccesoEmpresa" style={stylesb}>
+              Registrate
+            </Link>
+          </button>
+        </div>
+      </div>
+    </nav>
+  );
 };
